@@ -24,6 +24,14 @@ const photoList = [
   "/photos/photo20.JPEG"
 ];
 
+{images.map((img, index) => (
+  <img
+    key={index}
+    src={`${process.env.PUBLIC_URL}/photos/${img}`}
+    alt={`memory-${index}`}
+  />
+))}
+
 const SurpriseCardScene = ({ onOpenMessage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
