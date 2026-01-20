@@ -1,0 +1,50 @@
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4b0082; /* royal purple */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.bubu-container {
+  position: relative;
+  z-index: 20;
+}
+
+.bubu-sticker {
+  display: inline-block;
+  background-color: #fff; /* white sticker */
+  color: #4b0082;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  animation: popIn 1s ease-out;
+}
+
+.birthday-text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
