@@ -1,40 +1,40 @@
 import React, { useState } from "react";
 import "./SurpriseCardScene.css";
 
-// ✅ ONLY file names (no /photos here)
+// ✅ FULL ABSOLUTE PATHS (GitHub Pages safe)
 const photoList = [
-  "photo1.jpeg",
-  "photo2.jpeg",
-  "photo3.jpeg",
-  "photo4.jpeg",
-  "photo5.jpeg",
-  "photo6.jpeg",
-  "photo7.jpeg",
-  "photo8.jpeg",
-  "photo9.jpeg",
-  "photo10.jpeg",
-  "photo11.jpeg",
-  "photo12.jpeg",
-  "photo13.jpeg",
-  "photo14.jpeg",
-  "photo15.jpeg",
-  "photo16.jpeg",
-  "photo17.jpeg",
-  "photo18.jpeg",
-  "photo19.jpeg",
-  "photo20.jpeg"
+  `${process.env.PUBLIC_URL}/photos/photo1.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo2.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo3.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo4.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo5.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo6.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo7.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo8.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo9.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo10.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo11.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo12.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo13.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo14.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo15.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo16.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo17.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo18.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo19.jpeg`,
+  `${process.env.PUBLIC_URL}/photos/photo20.jpeg`
 ];
 
 const SurpriseCardScene = ({ onOpenMessage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((currentIndex + 1) % photoList.length);
+    setCurrentIndex((prev) => (prev + 1) % photoList.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (currentIndex - 1 + photoList.length) % photoList.length
+    setCurrentIndex((prev) =>
+      (prev - 1 + photoList.length) % photoList.length
     );
   };
 
@@ -49,11 +49,11 @@ const SurpriseCardScene = ({ onOpenMessage }) => {
         </button>
 
         <div className="card">
-          {/* ✅ CORRECT IMAGE PATH */}
           <img
-            src={`${process.env.PUBLIC_URL}/photos/${photoList[currentIndex]}`}
+            src={photoList[currentIndex]}
             alt={`Memory ${currentIndex + 1}`}
             className="card-img"
+            loading="lazy"
           />
           <div className="heart-icon left">💖</div>
           <div className="heart-icon right">💖</div>
@@ -62,17 +62,6 @@ const SurpriseCardScene = ({ onOpenMessage }) => {
         <button className="arrow-btn right" onClick={handleNext}>
           &#10095;
         </button>
-      </div>
-
-      {/* Optional thumbnail preload (hidden but useful) */}
-      <div style={{ display: "none" }}>
-        {photoList.map((img, index) => (
-          <img
-            key={index}
-            src={`${process.env.PUBLIC_URL}/photos/${img}`}
-            alt={`preload-${index}`}
-          />
-        ))}
       </div>
 
       {currentIndex === photoList.length - 1 && (
