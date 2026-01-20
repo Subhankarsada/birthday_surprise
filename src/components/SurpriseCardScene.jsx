@@ -3,26 +3,26 @@ import "./SurpriseCardScene.css";
 
 // ✅ ONLY file names (no /photos here)
 const photoList = [
-  "photo1.JPEG",
-  "photo2.JPEG",
-  "photo3.JPEG",
-  "photo4.JPEG",
-  "photo5.JPEG",
-  "photo6.JPEG",
-  "photo7.JPEG",
-  "photo8.JPEG",
-  "photo9.JPEG",
-  "photo10.JPEG",
-  "photo11.JPEG",
-  "photo12.JPEG",
-  "photo13.JPEG",
-  "photo14.JPEG",
-  "photo15.JPEG",
-  "photo16.JPEG",
-  "photo17.JPEG",
-  "photo18.JPEG",
-  "photo19.JPEG",
-  "photo20.JPEG"
+  "photo1.jpeg",
+  "photo2.jpeg",
+  "photo3.jpeg",
+  "photo4.jpeg",
+  "photo5.jpeg",
+  "photo6.jpeg",
+  "photo7.jpeg",
+  "photo8.jpeg",
+  "photo9.jpeg",
+  "photo10.jpeg",
+  "photo11.jpeg",
+  "photo12.jpeg",
+  "photo13.jpeg",
+  "photo14.jpeg",
+  "photo15.jpeg",
+  "photo16.jpeg",
+  "photo17.jpeg",
+  "photo18.jpeg",
+  "photo19.jpeg",
+  "photo20.jpeg"
 ];
 
 const SurpriseCardScene = ({ onOpenMessage }) => {
