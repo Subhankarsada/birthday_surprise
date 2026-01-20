@@ -24,7 +24,7 @@ const photoList = [
   "/photos/photo20.JPEG"
 ];
 
-{images.map((img, index) => (
+{photoList.map((img, index) => (
   <img
     key={index}
     src={`${process.env.PUBLIC_URL}/photos/${img}`}

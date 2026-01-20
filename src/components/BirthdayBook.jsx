@@ -75,7 +75,7 @@ const BirthdayBook = ({ onReplay }) => {
                     <div className="book-cover">
                         <h2 className="message-title">A Special Message</h2>
                         <img
-                            src="/bubu-dudu-sseeyall.gif"
+                            src={`${process.env.PUBLIC_URL}/bubu-dudu-sseeyall.gif`}
                             alt="Birthday animation"
                             className="cover-gif"
                         />
@@ -102,7 +102,7 @@ const BirthdayBook = ({ onReplay }) => {
                     <button className="replay-btn" onClick={onReplay}>
                         🔄 Replay
                     </button>
-                    <img src="/sparkle.gif" alt="Replay Gif" className="replay-gif" />
+                    <img src={`${process.env.PUBLIC_URL}/sparkle.gif`} alt="Replay Gif" className="replay-gif" />
                 </div>
             )}
 
